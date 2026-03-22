@@ -14,7 +14,11 @@ NASU_WALK_SPEED = 2.5
 NASU_JUMP_HEIGHT = 5
 NASU_GRAVITY = 1
 
-NASU_FLOOR_HEIGHT = djui_hud_get_screen_height()/1.25
+NASU_FLOOR_HEIGHT = math.floor(djui_hud_get_screen_height()/2 + nasuBG.height/2 - 91)
+NASU_CEIL_HEIGHT = math.floor(djui_hud_get_screen_height()/2 - nasuBG.height/2 + 57)
+NASU_LEFT_WALL = math.floor(djui_hud_get_screen_width()/2 - nasuBG.width/2 + 44)
+NASU_RIGHT_WALL = math.floor(djui_hud_get_screen_width()/2 + nasuBG.width/2 - 44)
+  
 
 n = {
   tex = SPRITE_NASU,
@@ -153,10 +157,10 @@ function render_nasu()
   
   djui_hud_set_resolution(RESOLUTION_N64)
   
-  NASU_FLOOR_HEIGHT = djui_hud_get_screen_height()/2 + nasuBG.height/2 - 91
-  NASU_CEIL_HEIGHT = djui_hud_get_screen_height()/2 - nasuBG.height/2 + 57
-  NASU_LEFT_WALL = djui_hud_get_screen_width()/2 - nasuBG.width/2 + 44
-  NASU_RIGHT_WALL = djui_hud_get_screen_width()/2 + nasuBG.width/2 - 44
+  NASU_FLOOR_HEIGHT = math.floor(djui_hud_get_screen_height()/2 + nasuBG.height/2 - 91)
+  NASU_CEIL_HEIGHT = math.floor(djui_hud_get_screen_height()/2 - nasuBG.height/2 + 57)
+  NASU_LEFT_WALL = math.floor(djui_hud_get_screen_width()/2 - nasuBG.width/2 + 44)
+  NASU_RIGHT_WALL = math.floor(djui_hud_get_screen_width()/2 + nasuBG.width/2 - 44)
   
   nasu_player()
   
